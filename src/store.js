@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 
 import rootReducer from "./reducers/index";
 
+// This is where we define our Redux store.
+
+// Sets up a Redux store by creating a new instance of the store using the createStore function.
+
 const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    applyMiddleware()
 );
 
 export default store;
